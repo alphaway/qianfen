@@ -1,0 +1,147 @@
+@charset "utf-8";
+*{
+	margin: 0px;
+	padding: 0px;
+}
+html,body{
+	width: 100%;
+	height: 100%;
+	background: black;
+}
+#box{
+	width: 50%;
+	height: 350px;
+	position: absolute;
+	left: 25%;
+	top: 10%;
+}
+/*
+ boxLeft，boxCenter，boxRight使得三列在它们所在的容器中分布均匀
+ * */
+#boxLeft{
+	width: 30%;
+	height: 100%;
+	float: left;
+	
+}
+#boxCenter{
+	width: 30%;
+	height: 100%;
+	float: left;
+	margin-left: 5%;
+	
+}
+#boxRight{
+	width: 30%;
+	height: 100%;
+	float: right;
+	
+}
+
+.mission{
+	background: url(../img/mission.png) no-repeat center;
+}
+.play{
+	background: url(../img/play.png) no-repeat center;
+}
+.touch{
+	background: url(../img/touch.png) no-repeat center;
+}
+.btn{
+	display: block;
+	width: 100%;
+	height:70%;
+	transition: 1s;
+}
+.btn:hover{
+	transform: rotate(360deg);
+}
+/*下面按钮的CSS*/
+.button{
+	/*设置成块元素，这样才能支持width 和 height*/
+	display: block;
+	width: 100%;
+	height:70px;
+	border: solid white 2px;
+	/*让盒子和边框一样大*/
+	box-sizing: border-box;
+	/*让文字没有下划线， 因为超链接的文字默认有下划线*/
+	text-decoration: none;
+	/*字体居中*/
+	line-height: 70px;
+	color: white;
+	/*字体变粗*/
+	font-weight: bold;
+	
+	padding-left: 50px;
+	/*center是上下居中*/
+	background: url(../img/allow.png) no-repeat 150px center;
+	position: relative;
+}
+
+.line-top{
+	display: block;
+	height: 2px;
+	width: 0%;
+	background: white;
+	position: absolute;
+	/*这是是相对于父元素-100%*/
+	left: -100%;
+	top: -2px;
+	transition: 1s;
+}
+.line-right{
+	display: block;
+	width: 2px;
+	height: 0%;
+	
+	background: white;
+	position: absolute;
+	
+	left: 100%;
+	top: -100%;
+	transition: 1s;
+}
+.line-bottom{
+	display: block;
+	width: 0%;
+	height: 2px;
+	
+	background: white;
+	position: absolute;
+	/*这是是相对于父元素-100%*/
+	right: -100%;
+	top: 100% ;
+	transition: 1s;
+}
+.line-left{
+	display: block;
+	width: 2px;
+	height: 0%;
+	
+	background: white;
+	position: absolute;
+	
+	right: 100%;
+	bottom: -100%;
+	
+	transition: 1s;
+}
+/*当鼠标移到button的时候， 让.line-top去执行悬浮时间*/
+.button:hover .line-top{
+	left: 0%;
+	width: 100%;
+}
+.button:hover .line-right{
+	top: 0%;
+	height: 100%;
+}
+
+.button:hover .line-bottom{
+	right: 0%;
+	width: 100%;
+}
+.button:hover .line-left{
+	bottom: 0%;
+	height: 100%;
+}
